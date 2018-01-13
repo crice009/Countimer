@@ -9,7 +9,7 @@
 #include <WProgram.h>
 #endif
 
-#define COUNTIMER_MAX_HOURS 999
+#define COUNTIMER_MAX_HOURS 168 		//a week, but this was originally 999hrs
 #define COUNTIMER_MAX_MINUTES_SECONDS 59
 
 typedef void(*timer_callback)(void);
@@ -71,6 +71,9 @@ public:
 
 	// Restart timer.
 	void restart();
+	
+	// adjust target time.
+	void adjust();
 
 private:
 	// Counting up timer.
